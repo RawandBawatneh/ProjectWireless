@@ -6,8 +6,8 @@ import google.generativeai as genai
 
 app = Flask(__name__)
 
-genai.configure(api_key="AIzaSyAzswBWIsY2tIaju8-tj63y9H1ai_nCL5c")
-model = genai.GenerativeModel("gemini-1.5-flash")
+import os
+genai.configure(api_key=os.getenv("API_KEY"))
 
 def interpret_result(full_prompt):
     try:
